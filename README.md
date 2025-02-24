@@ -1,5 +1,5 @@
 # cse210-student-template
-This Is the github repository for the cse210 class at BYUI
+This Is Benson's github repository for the cse210 class at BYUI
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
