@@ -1,12 +1,16 @@
 public class Job
 {
-    public string _company;
-    public string _jobTitle;
-    public string _startYear;
-    public string _endYear;
+    private string _company;
+    private string _jobTitle;
+    private int _startYear;
+    private int _endYear;
 
-    public Job()
+    public Job(string jobTitle, string companyName, int startYear, int endYear)
     {
+        _company = companyName;
+        _jobTitle= jobTitle;
+        _startYear= startYear;
+        _endYear = endYear;
 
     }
 

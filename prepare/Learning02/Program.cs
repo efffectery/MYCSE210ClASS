@@ -5,23 +5,11 @@ class Program
     static void Main(string[] args)
     {
 
-        Job job1 = new Job();
-        job1._jobTitle = "Software Engineer";
-        job1._company = "Microsoft";
-        job1._startYear = "2000";
-        job1._endYear = "2020";
+        Job job1 = new Job("Software Engineer", "Microsoft", 2000, 2020);
 
-        Job job2 = new Job();
-        job2._jobTitle = "Software Developer";
-        job2._company = "APPLE";
-        job2._startYear = "1980";
-        job2._endYear = "2024";
-        
-        Resume JobResume = new Resume();
-        JobResume._personName = "Joe";
+        Job job2 = new Job("Software Developer", "APPLE", 1980, 2024);
 
-        JobResume._jobs.Add(job1);
-        JobResume._jobs.Add(job2);
+        Resume JobResume = new Resume("Joe", [job1, job2]);
 
         JobResume.DisplayResume();
         

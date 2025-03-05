@@ -2,12 +2,13 @@ using System;
 
 public class Resume
 {
-    public string _personName;
-    public List<Job> _jobs = new List<Job>();
+    private string _personName;
+    private List<Job> _jobs = new List<Job>();
 
-    public Resume()
+    public Resume(string personName, List<Job> jobs)
     {
-
+        _personName = personName;
+        _jobs = jobs;
     }
     
     
