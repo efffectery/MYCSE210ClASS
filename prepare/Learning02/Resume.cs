@@ -3,14 +3,13 @@ using System;
 public class Resume
 {
     private string _personName;
-    private List<Job> _jobs = new List<Job>();
+    private List<Job> _jobs;
 
-    public Resume(string personName, List<Job> jobs)
+    public Resume(string personName)
     {
         _personName = personName;
-        _jobs = jobs;
+        _jobs = new List<Job>();
     }
-    
     
     public void DisplayResume()
     {
@@ -20,6 +19,11 @@ public class Resume
         {
         job.DisplayJobInfo();
         }
+    }
+    
+    public void addJob(Job job)
+    {
+        _jobs.Add(job);
     }
 
 }

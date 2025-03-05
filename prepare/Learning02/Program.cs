@@ -9,7 +9,9 @@ class Program
 
         Job job2 = new Job("Software Developer", "APPLE", 1980, 2024);
 
-        Resume JobResume = new Resume("Joe", [job1, job2]);
+        Resume JobResume = new Resume("Joe");
+        JobResume.addJob(job1);
+        JobResume.addJob(job2);
 
         JobResume.DisplayResume();
         
