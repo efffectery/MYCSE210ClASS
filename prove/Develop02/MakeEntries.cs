@@ -46,9 +46,4 @@ class MakeEntries
         
     }
     
-    public static void SetEntries(List<string> newEntries)
-    {
-       entries = newEntries; 
-    }
-    
 }
