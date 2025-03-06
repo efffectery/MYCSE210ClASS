@@ -14,7 +14,7 @@ class Program
         Menu loadMenu = new Menu();
 
         //Introduce the program to the user
-        Console.WriteLine("Welcome to the Journal Program!");
+        Console.WriteLine("Welcome to the Journal Program!\n");
 
         /*
         Go through the program allowing user to see the menu choose a item on the menu

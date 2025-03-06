@@ -13,7 +13,7 @@ class Load()
             string Date = parts[0];
             string Prompt = parts[1]; 
             string Answer = parts[2]; 
-            Console.WriteLine($"{Date}, {Prompt}\n{Answer}");
+            Console.WriteLine($"\n{Date}, {Prompt}\n{Answer}");
         }
     }
     
