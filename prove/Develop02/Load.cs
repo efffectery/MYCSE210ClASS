@@ -10,9 +10,10 @@ class Load()
         foreach (string line in lines)
         {
             string[] parts = line.Split("#");
-            string Date = parts[0];
-            string Prompt = parts[1]; 
-            string Answer = parts[2]; 
+            string Name = parts[0];
+            string Date = parts[1];
+            string Prompt = parts[2]; 
+            string Answer = parts[3]; 
             Console.WriteLine($"\n{Date}, {Prompt}\n{Answer}");
         }
     }

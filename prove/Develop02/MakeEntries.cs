@@ -30,13 +30,15 @@ class MakeEntries
     
     public void AddEntryToJournal()
     {
+        Console.WriteLine("What is Your Name?");
+        string userName = Console.ReadLine();
         string today = DateTime.Now.ToString("hh:mm:ss tt");
         Random random = new Random();
         int randNumber = random.Next(listPrompts.Count);
         string randGenPrompt = listPrompts[randNumber];
         Console.WriteLine(randGenPrompt);
         string promptAnswer = Console.ReadLine();
-        string enteredEntry = $"{today}#{randGenPrompt}#{promptAnswer}";
+        string enteredEntry = $"{userName}#{today}#{randGenPrompt}#{promptAnswer}";
         entries.Add(enteredEntry);
     }
     

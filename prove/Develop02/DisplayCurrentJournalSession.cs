@@ -6,7 +6,7 @@ class DisplayCurrentJournalSession()
         foreach (var entry in listEntries)
         {
             string[] parts = entry.Split("#");
-            Console.WriteLine($"\n{parts[0]} {parts[1]}\n{parts[2]}");
+            Console.WriteLine($"\n{parts[0]} {parts[1]} {parts[2]}\n{parts[3]}\n");
         }
 
     }
