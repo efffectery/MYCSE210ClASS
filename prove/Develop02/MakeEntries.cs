@@ -1,10 +1,9 @@
 using System;
-
-public class Write()
+class MakeEntries
 {
-    private List<string> prompts = new List<string>
-        
-        {
+    private static List<string> entries = new List<string>();
+    private List<string> listPrompts = new List<string>
+    {
             "How did you start your day today? Any interesting plans?",
             "Did you experience any unexpected challenges at work or school?",
             "What's something new or exciting that happened today?",
@@ -24,12 +23,32 @@ public class Write()
             "Did you discover a new hobby or interest today?",
             "What did you do to unwind after a busy part of your day?",
             "What was the highlight of your work or study day?",
-            "Was there a moment today that made you smile or laugh?"
-        };
-
-    public void displayPrompt()
+            "Was there a moment today that made you smile or laugh?",
+            "How have you seen the Lords hand in your life?"
+    };
+    
+    
+    public void AddEntryToJournal()
     {
-        Console.WriteLine(prompts);
+        string today = DateTime.Now.ToString("hh:mm:ss tt");
+        Random random = new Random();
+        int randNumber = random.Next(listPrompts.Count);
+        string randGenPrompt = listPrompts[randNumber];
+        Console.WriteLine(randGenPrompt);
+        string promptAnswer = Console.ReadLine();
+        string enteredEntry = $"{today}#{randGenPrompt}#{promptAnswer}";
+        entries.Add(enteredEntry);
+    }
+    
+    public static List<string> GetEntries()
+    {
+        return entries;
+        
+    }
+    
+    public static void SetEntries(List<string> newEntries)
+    {
+       entries = newEntries; 
     }
     
 }
