@@ -3,7 +3,7 @@ class Fraction
 
     private int _top;
     private int _bottom;
-    
+
     public Fraction()
     {
         _top = 1;
@@ -21,7 +21,7 @@ class Fraction
         _top = top;
         _bottom = bottom;
     }
-    
+
     public int GetTop()
     {
         return _top;
@@ -38,7 +38,7 @@ class Fraction
     {
         _top = top;
     }
-    
+
     public string GetFractionString()
     {
         return $"{GetTop()}/{GetBottom()}";
