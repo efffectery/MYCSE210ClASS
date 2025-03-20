@@ -1,8 +1,6 @@
 class Activity
 {
     private int _activityLength;
-    
-    protected Random _random = new Random();
 
     public Activity()
     {
@@ -31,7 +29,9 @@ class Activity
     }
     public void EndingMessage(string name)
     {
+        Console.WriteLine("\n\n");
         Console.WriteLine($"You just completed {name} in {_activityLength} seconds");
+        Pause(3000);
     }
     
     public void Pause(int time)

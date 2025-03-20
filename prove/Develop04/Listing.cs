@@ -15,19 +15,6 @@ class Listing: Activity
 
     }
     
-    public void StartMessageL()
-    {
-        Console.Write("\n\n");
-        StartingMessage(_nameofActivity, _description);
-    }
-
-    public void EndMessageL()
-    {  
-        Console.Write("\n\n");
-        EndingMessage(_nameofActivity);
-        Pause(3000);
-    }
-    
     public void StartActivityL()
     {
         Random random = new Random();
@@ -53,10 +40,10 @@ class Listing: Activity
     
     public void MainListing()
     {
-        StartMessageL();
+        StartingMessage(_nameofActivity, _description);
         StartActivityL();
         ActualActivityL();
-        EndMessageL();
+        EndingMessage(_nameofActivity);
     }
     
     

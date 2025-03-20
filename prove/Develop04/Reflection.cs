@@ -27,19 +27,6 @@ class Reflection: Activity
     {
 
     }
-    public void StartMessageR()
-    {
-
-        Console.Write("\n\n");
-        StartingMessage(_nameofActivity, _description);
-    }
-
-    public void EndMessageR()
-    {
-        Console.Write("\n\n");
-        EndingMessage(_nameofActivity);
-        Pause(3000);
-    }
     
     public void ActivityR()
     {
@@ -57,9 +44,9 @@ class Reflection: Activity
     }
     public void ReflectionMain()
     {
-        StartMessageR();
+        StartingMessage(_nameofActivity, _description);
         ActivityR();
-        EndMessageR();
+        EndingMessage(_nameofActivity);
     }
     
 

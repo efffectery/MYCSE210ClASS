@@ -9,19 +9,6 @@ class Breathing : Activity
     {
     }
     
-    public void StartMessageB()
-    {
-        Console.Write("\n\n");
-        StartingMessage(_nameofActivity, _description);
-    }
-    
-    public void EndMessageB()
-    {
-        Console.Write("\n\n");
-        EndingMessage(_nameofActivity);
-        Pause(3000);
-    }
-    
     public void StartActivityB()
     {
         Console.Clear();
@@ -45,10 +32,10 @@ class Breathing : Activity
     
     public void BreathMain()
     {
-        StartMessageB();
+        StartingMessage(_nameofActivity, _description);
         StartActivityB();
         ActualActivityB();
-        EndMessageB();
+        EndingMessage(_nameofActivity);
     }
         
 }
