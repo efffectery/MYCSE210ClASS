@@ -30,6 +30,7 @@ class Reflection: Activity
     
     public void ActivityR()
     {
+        Console.Clear();
         DateTime endTime = DateTime.Now.AddSeconds(GetActivityLength());
         while (DateTime.Now < endTime)
         {

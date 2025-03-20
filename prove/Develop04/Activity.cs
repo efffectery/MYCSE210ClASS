@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 class Activity
 {
     private int _activityLength;
@@ -13,7 +15,7 @@ class Activity
         string response = Console.ReadLine();
         _activityLength = int.Parse(response);
         Console.WriteLine("Prepare to Begin!");
-        Pause(100);
+        Pause(2000);
     }
 
     public int GetActivityLength()
@@ -23,15 +25,15 @@ class Activity
     
     public void StartingMessage(string name, string description)
     {
+        Console.Clear();
         Console.WriteLine($"Welcome to the {name}\n\n{description}\n");
         AskNSetActivityLength();
-
     }
     public void EndingMessage(string name)
     {
-        Console.WriteLine("\n\n");
+        Console.Clear();
         Console.WriteLine($"You just completed {name} in {_activityLength} seconds");
-        Pause(3000);
+        Pause(4000);
     }
     
     public void Pause(int time)

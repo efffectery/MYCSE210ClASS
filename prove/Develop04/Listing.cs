@@ -17,6 +17,7 @@ class Listing: Activity
     
     public void StartActivityL()
     {
+        Console.Clear();
         Random random = new Random();
         int randIndex = random.Next(_prompts.Length);
         Console.WriteLine(_prompts[randIndex] + "\n");
