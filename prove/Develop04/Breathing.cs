@@ -7,7 +7,6 @@ class Breathing : Activity
     
     public Breathing() : base()
     {
-
     }
     
     public void StartMessageB()
@@ -27,12 +26,13 @@ class Breathing : Activity
     {
         Console.Clear();
         Console.WriteLine("Get Ready...\n");
-        LoadAnimation();
+        LoadAnimation(4);
     }
     
-    public void ActualActivityB(int count)
+    public void ActualActivityB()
     {
-        while (count > 0)
+        DateTime endTime = DateTime.Now.AddSeconds(GetActivityLength());
+        while (DateTime.Now < endTime)
         {
             Console.Write("Breath in...");
             CountAnimation(6);
@@ -40,7 +40,6 @@ class Breathing : Activity
             Console.Write("Now breath out...");
             CountAnimation(4);
             Console.Write("\n");
-            count--;
         }
     }
     
@@ -48,7 +47,7 @@ class Breathing : Activity
     {
         StartMessageB();
         StartActivityB();
-        ActualActivityB(GetActivityLength() / 10);
+        ActualActivityB();
         EndMessageB();
     }
         

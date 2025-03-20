@@ -41,25 +41,24 @@ class Reflection: Activity
         Pause(3000);
     }
     
-    public void ActivityR(int count)
+    public void ActivityR()
     {
-        count -= 10;
-        while (count > 0)
+        DateTime endTime = DateTime.Now.AddSeconds(GetActivityLength());
+        while (DateTime.Now < endTime)
         {
             Random random = new Random();
             int randIndex = random.Next(_propmets.Length);
             Console.WriteLine(_propmets[randIndex] + "\n");
-            LoadAnimation();
+            LoadAnimation(10);
             randIndex = random.Next(_reflects.Length);
             Console.WriteLine(_reflects[randIndex] + "\n");
-            LoadAnimation();
-            count--;
+            LoadAnimation(10);
         }
     }
     public void ReflectionMain()
     {
         StartMessageR();
-        ActivityR(GetActivityLength());
+        ActivityR();
         EndMessageR();
     }
     

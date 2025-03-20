@@ -39,21 +39,23 @@ class Activity
         Thread.Sleep(time);        
     }
     
-    public void LoadAnimation()
+    public void LoadAnimation(int future)
     {
-        int count = 10;
-        while (count > 0)
+        DateTime endtime = DateTime.Now.AddSeconds(future);
+        while(DateTime.Now < endtime)
         {
             Console.Write("\\");
-            Pause(166);
-            Console.Write("\b \b");
-            Console.Write("-");
-            Pause(166);
+            Pause(100);
+            Console.Write("\b\b \b");
+            Console.Write("|");
+            Pause(100);
             Console.Write("\b \b");
             Console.Write("/");
-            Pause(166);
+            Pause(100);
             Console.Write("\b \b");
-            count--;
+            Console.Write("-");
+            Pause(100);
+            Console.Write("\b \b");
         }
     }
     

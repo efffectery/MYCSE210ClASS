@@ -38,11 +38,15 @@ class Listing: Activity
     
     public int ActualActivityL()
     {
+        DateTime endTime = DateTime.Now.AddSeconds(GetActivityLength());
         int entered = 0;
-        string input = Console.ReadLine();
-        if (input != " ")
+        while (DateTime.Now < endTime)
         {
-           entered += 1; 
+            string input = Console.ReadLine();
+            if (input != " ")
+            {
+               entered += 1; 
+            }
         }
         return entered;
    }
@@ -51,16 +55,7 @@ class Listing: Activity
     {
         StartMessageL();
         StartActivityL();
-        int entered = 0;
-        DateTime current = DateTime.Now;
-        DateTime futureTime = current.AddSeconds(GetActivityLength() - 5);
-        Console.Write("Start Entering Entries!");
-        while (current < futureTime)
-        {
-            entered += ActualActivityL();
-            current = DateTime.Now;
-        }
-        Console.WriteLine($"Nice you entered in {entered} entries");
+        ActualActivityL();
         EndMessageL();
     }
     
