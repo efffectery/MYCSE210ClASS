@@ -1,10 +1,9 @@
-using System.Reflection.Metadata;
-
 class Menu
 {
-    public int DeafaultMenu()
+    public int DeafaultMenu(int points)
     {
         Console.Clear();
+        Console.WriteLine($"Points: {points}");
         Console.WriteLine("Menu Options");
         Console.WriteLine("\t1. Create New Goal");
         Console.WriteLine("\t2. List Goals");

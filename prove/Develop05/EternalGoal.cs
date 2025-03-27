@@ -1,18 +1,12 @@
 class EternalGoal : Goal
 {
-
-    override public void DisplayGoal()
-    {
-        Console.WriteLine($"{GetType()}, {GetName()}, {GetDesript()}");
-    }
     public override void RecordEvent()
-    {
-        SetDone(false);
+    { SetDone(false); 
+      IncreasePoints(GetPPC());   
     }
-
-    public override void MakeGoal()
+    public override void Display()
     {
-
+        string done_string = "[ ]";
+        Console.WriteLine($"{done_string} {GetType()}: {GetName} {GetDesript} {GetPPC()}");
     }
-
 }
