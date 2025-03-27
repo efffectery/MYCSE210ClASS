@@ -32,7 +32,7 @@ abstract class Goal
     public void SetDone(bool done)
     { _done = done; }
     public void IncreasePoints(int points)
-    { _points += points; }
+    { _points = points; }
 
     abstract public void RecordEvent();
     virtual public int GetAD()

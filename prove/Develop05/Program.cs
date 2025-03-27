@@ -6,7 +6,6 @@ class Program
 
         Menu menu = new Menu();
         Goals goals = new Goals();
-        EternalGoal point = new EternalGoal();
         int points = 0;
         while(true)
         {
@@ -80,7 +79,16 @@ class Program
                 points = goals.GetPointsFromGoals();
             }
             else if(userinput == 5)
-            { points += goals.CompleteAGoal(); }
+            { 
+                points = goals.CompleteAGoal(); 
+                Console.WriteLine("+_+_+_+_+_+__+_++_+_+_+_+_+_+_YOU COMPLETED A GOAL!!!!+++__+_+_+_+__++_+_+_+_+_");
+                Console.WriteLine("+_+_+_+_+_+__+_++_+_+_+_+_+_+_YOU COMPLETED A GOAL!!!!+++__+_+_+_+__++_+_+_+_+_");
+                Console.WriteLine("+_+_+_+_+_+__+_++_+_+_+_+_+_+_YOU COMPLETED A GOAL!!!!+++__+_+_+_+__++_+_+_+_+_");
+                Console.WriteLine("+_+_+_+_+_+__+_++_+_+_+_+_+_+_YOU COMPLETED A GOAL!!!!+++__+_+_+_+__++_+_+_+_+_");
+                Console.WriteLine("+_+_+_+_+_+__+_++_+_+_+_+_+_+_YOU COMPLETED A GOAL!!!!+++__+_+_+_+__++_+_+_+_+_");
+                Console.WriteLine("+_+_+_+_+_+__+_++_+_+_+_+_+_+_YOU COMPLETED A GOAL!!!!+++__+_+_+_+__++_+_+_+_+_");
+                Console.WriteLine("+_+_+_+_+_+__+_++_+_+_+_+_+_+_YOU COMPLETED A GOAL!!!!+++__+_+_+_+__++_+_+_+_+_");
+            }
             else if(userinput == 6)
             { Environment.Exit(0); }
             else

@@ -34,8 +34,13 @@ class Goals
         {
             dict[userinput].RecordEvent();
         }
-        _points = dict[userinput].GetPoints();
-        return dict[userinput].GetPoints();
+
+        _points += dict[userinput].GetPoints();
+        if(dict[userinput].GetAD() == dict[userinput].GetATD())
+        {
+            _points += dict[userinput].GetBonus();
+        }
+        return _points;
     }
 
     public int GetPointsFromGoals()
