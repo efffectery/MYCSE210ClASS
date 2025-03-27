@@ -23,7 +23,7 @@ class ChecklistGoal : Goal
         { done_string = "[X]"; }
         else
         { done_string = "[ ]"; }
-        Console.WriteLine($"{done_string} {GetType()}: {GetName} {GetDesript} {GetPPC()} {GetBonus()} {GetAD()}/{GetATD()}");
+        Console.WriteLine($"{done_string} {GetType()}: {GetName()} {GetDesript()} {GetPPC()} {GetBonus()} {GetAD()}/{GetATD()}");
     }
     public override int GetAD()
     { return _amountDone; }

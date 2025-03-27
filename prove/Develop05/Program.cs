@@ -5,11 +5,11 @@ class Program
     {
 
         Menu menu = new Menu();
-        EternalGoal Getpoints = new EternalGoal();
         Goals goals = new Goals();
+        EternalGoal point = new EternalGoal();
+        int points = 0;
         while(true)
         {
-            int points = Getpoints.GetPoints();
             int userinput = menu.DeafaultMenu(points);
             if(userinput == 1)
             {
@@ -17,41 +17,41 @@ class Program
                 if(moreuserinput == 1)
                 {
                     //simple
-                    SimpleGoal simpGoal = new SimpleGoal();
+                    EternalGoal eternalGoal = new EternalGoal();
                     Console.WriteLine("What is the name of the Goal?");
                     string name = Console.ReadLine();
                     Console.WriteLine("What is the description of this Goal?");
                     string description = Console.ReadLine();
                     Console.WriteLine("What is the points for each compleations of this Goal?");
                     int ppc = int.Parse(Console.ReadLine());
-                    Console.WriteLine("What is the name of the Goal?");
-                    int bonusPoints = int.Parse(Console.ReadLine());
-                    simpGoal.SetName(name);
-                    simpGoal.SetDescription(description);
-                    simpGoal.SetPPC(ppc);
-                    simpGoal.SetBonus(bonusPoints);
-                    goals.AddGoal(simpGoal);
+                    eternalGoal.SetName(name);
+                    eternalGoal.SetType("EternalGoal");
+                    eternalGoal.SetDescription(description);
+                    eternalGoal.SetPPC(ppc);
+                    goals.AddGoal(eternalGoal);
                 }
                 else if(moreuserinput == 2)
                 {
                     //checklist
-                    SimpleGoal simpGoal = new SimpleGoal();
+                    ChecklistGoal CheckGoal = new ChecklistGoal();
                     Console.WriteLine("What is the name of the Goal?");
                     string name = Console.ReadLine();
                     Console.WriteLine("What is the description of this Goal?");
                     string description = Console.ReadLine();
                     Console.WriteLine("What is the points for each compleations of this Goal?");
                     int ppc = int.Parse(Console.ReadLine());
-                    Console.WriteLine("What is the name of this Goal?");
+                    Console.WriteLine("What is the bonus points of this Goal?");
                     int bonusPoints = int.Parse(Console.ReadLine());
                     Console.WriteLine("What is the amount to be done of this Goal?");
                     int atd = int.Parse(Console.ReadLine());
-                    simpGoal.SetName(name);
-                    simpGoal.SetDescription(description);
-                    simpGoal.SetPPC(ppc);
-                    simpGoal.SetBonus(bonusPoints);
-                    simpGoal.SetATD(atd);
-                    goals.AddGoal(simpGoal);
+                    CheckGoal.SetType("ChecklistGoal");
+                    CheckGoal.SetName(name);
+                    CheckGoal.SetDescription(description);
+                    CheckGoal.SetPPC(ppc);
+                    CheckGoal.SetBonus(bonusPoints);
+                    CheckGoal.SetATD(atd);
+                    CheckGoal.SetAD(0);
+                    goals.AddGoal(CheckGoal);
                 }
                 else if(moreuserinput == 3)
                 {
@@ -63,6 +63,7 @@ class Program
                     string description = Console.ReadLine();
                     Console.WriteLine("What is the points for each compleations of this Goal?");
                     int ppc = int.Parse(Console.ReadLine());
+                    simpGoal.SetType("SimpleGoal");
                     simpGoal.SetName(name);
                     simpGoal.SetDescription(description);
                     simpGoal.SetPPC(ppc);
@@ -74,9 +75,12 @@ class Program
             else if(userinput == 3)
             { goals.SaveGoals(); }
             else if(userinput == 4)
-            { goals.Load(); }
+            { 
+                goals.Load(); 
+                points = goals.GetPointsFromGoals();
+            }
             else if(userinput == 5)
-            { goals.CompleteAGoal(); }
+            { points += goals.CompleteAGoal(); }
             else if(userinput == 6)
             { Environment.Exit(0); }
             else

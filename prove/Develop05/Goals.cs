@@ -4,6 +4,7 @@ class Goals
     private const string type1 = "CheckListGoal";
     private const string type2 = "EternalGoal";
     private const string type3 = "SimpleGoal";
+    private int _points;
 
     public void AddGoal(Goal new_goal)
     {
@@ -16,7 +17,7 @@ class Goals
             goal.Display();
         }
     }
-    public void CompleteAGoal()
+    public int CompleteAGoal()
     {
         Dictionary<int, Goal> dict = new Dictionary<int, Goal>();
         int i = 1;
@@ -33,10 +34,12 @@ class Goals
         {
             dict[userinput].RecordEvent();
         }
-
-        
+        _points = dict[userinput].GetPoints();
+        return dict[userinput].GetPoints();
     }
 
+    public int GetPointsFromGoals()
+    { return _points; }
     public List<Goal> GetGoals()
     {
         return _goals;
@@ -48,6 +51,7 @@ class Goals
         string file_name = Console.ReadLine();
         using (StreamWriter output = new StreamWriter(file_name))
         {
+            output.WriteLine($"{GetPointsFromGoals()}");
             foreach(Goal goal in _goals)
             {
                 string done_symbole = "";
@@ -73,9 +77,10 @@ class Goals
         string file_name = Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines(file_name);
 
+        _points = int.Parse(lines[0]);
+        lines = lines.Skip(1).ToArray();
         foreach (string line in lines)
         {
-
             string[] parts = line.Split("#");
             string done = parts[0];
             string type = parts[1];

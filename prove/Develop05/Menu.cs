@@ -2,7 +2,6 @@ class Menu
 {
     public int DeafaultMenu(int points)
     {
-        Console.Clear();
         Console.WriteLine($"Points: {points}");
         Console.WriteLine("Menu Options");
         Console.WriteLine("\t1. Create New Goal");
@@ -26,9 +25,9 @@ class Menu
     {
         Console.Clear();
         Console.WriteLine("The Types Of Goals Are:");
-        Console.WriteLine("\t1. Simple Goal");
+        Console.WriteLine("\t1. Eternal Goal");
         Console.WriteLine("\t2. Checklist Goal");
-        Console.WriteLine("\t3. Eternal Goal");
+        Console.WriteLine("\t3. Simple Goal");
         Console.WriteLine("What Goal Do You Want To Create?");
         int userChoice= int.Parse(Console.ReadLine());
         if (userChoice < 1 | userChoice > 3)

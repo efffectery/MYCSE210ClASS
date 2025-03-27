@@ -13,6 +13,6 @@ class SimpleGoal : Goal
         { done_string = "[X]"; }
         else
         { done_string = "[ ]"; }
-        Console.WriteLine($"{done_string} {GetType()}: {GetName} {GetDesript} {GetPPC()}");
+        Console.WriteLine($"{done_string} {GetType()}: {GetName()} {GetDesript()} {GetPPC()}");
     }
 }

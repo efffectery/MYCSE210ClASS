@@ -5,7 +5,7 @@ abstract class Goal
     private string _description;
     private int _pointsPerCompleation;
     private bool _done = false;
-    private int _points;
+    private int _points = 0;
 
     //Getters
     public int GetPoints()
