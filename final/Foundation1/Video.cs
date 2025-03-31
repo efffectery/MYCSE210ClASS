@@ -16,10 +16,10 @@ class Video
 
     public void DisplayVideo()
     {
-        Console.WriteLine($"Title: {title}, Author: {author}, Length: {length}");
+        Console.WriteLine($"Title: {title}, Author: {author}, Length: {length}, Amount of Comments: {comments.Count()}");
         foreach(Comment comment in comments)
         {
-            Console.WriteLine(comment.DisplayComment());
+            Console.WriteLine($"{comment.DisplayComment()}"); 
             Console.WriteLine();
         }
     }
